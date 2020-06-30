@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>https://www.youtube.com/watch?v=US7osZg_zcY</title>
+</head>
+
+<body>
+    <h1 id='divh1' style="position: fixed">Salai</h1>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div id='divItem' style="display: block;
+/* margin: 0 auto; */
+height: 10vw;
+width: 10vw;
+border: 1px solid black;
+background: darksalmon;
+font-size: 20px;
+text-align: center;animation-timing-function: ease-out;
+transition-duration: 5s;
+">
+    </div>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <script>
+        var divItem = document.getElementById('divItem');
+        let options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 1.0
+        };
+
+        let callback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.target.id === 'divItem') {
+                    divItem.style.background = (entry.isIntersecting) ?
+                        'green' :
+                        'red';
+                }
+                if (entry.target.id === 'divItem') {
+                    divItem.style.marginLeft = (entry.isIntersecting) ?
+                        '44vw' :
+                        '0vw';
+                }
+                if (entry.target.id === 'divItem') {
+                    divh1.style.color = (entry.isIntersecting) ?
+                        'orange' :
+                        'lime';
+                }
+            })
+        }
+        let observer = new IntersectionObserver(callback, options);
+        observer.observe(divItem);
+        observer.observe(divh1);
+    </script>
+
+
+
+</body>
+
+</html>
